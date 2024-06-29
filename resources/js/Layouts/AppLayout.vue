@@ -7,11 +7,14 @@ import Dropdown from '@/Components/Dropdown.vue';
 import DropdownLink from '@/Components/DropdownLink.vue';
 import NavLink from '@/Components/NavLink.vue';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
+import { usePermission } from '@/Composables/permissions';
+
 
 defineProps({
     title: String,
 });
 
+const {hasRole} = usePermission();
 const showingNavigationDropdown = ref(false);
 
 const switchToTeam = (team) => {
@@ -51,7 +54,9 @@ const logout = () => {
                                 <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
                                 </NavLink>
-                                <NavLink :href="route('admin.index')" :active="route().current('admin.index')">
+                                <NavLink 
+                                v-if="hasRole('admin')"
+                                :href="route('admin.index')" :active="route().current('admin.index')">
                                     Admin
                                 </NavLink>
                             </div>
