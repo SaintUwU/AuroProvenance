@@ -28,11 +28,10 @@ Route::get('/', function () {
     ]);
 });
 
-Route::resources([
-    'roles' => RoleController::class,
-    'users' => UserController::class,
-    'cars' => CarController::class,
-]);
+
+Route::resource('/CarsIndex', [CarController::class, 'Cars'])->name('Cars.index');
+Route::resource('/RolesIndex', [RoleController::class, 'Role'])->name('Role.index');
+Route::resource('/UsersIndex', [UserController::class, 'index'])->name('User.index');
 
 Route::middleware([
     'auth:sanctum',

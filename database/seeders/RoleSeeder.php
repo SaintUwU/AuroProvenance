@@ -14,13 +14,24 @@ class RoleSeeder extends Seeder
     public function run(): void
     {
         //
-        $roles = [
-            ['name'=>'mechanic'],
-            ['name' => 'admin'],
-            ['name' => 'user'],
-            
-            // Add more roles as needed
-        ];
+        Role::create(['name' => 'mechanic']);
+        $admin = Role::create(['name' => 'admin']);
+        $productManager = Role::create(['name' => 'user']);
+
+        $admin->givePermissionTo([
+            'create-user',
+            'edit-user',
+            'delete-user',
+            'create-car',
+            'edit-car',
+            'delete-car'
+        ]);
+
+        $mechanic->givePermissionTo([
+            'create-car',
+            'edit-car',
+            'delete-car'
+        ]);
         foreach ($roles as $role) {
             Role::create(['name' => $role['name']]);
         }
