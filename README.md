@@ -66,14 +66,6 @@ Checks if the best practices and the right coding style has been used.
 
 ## Deployment
 
-Add additional notes to deploy this on a live system
-
-## Built With
-
-  - [Contributor Covenant](https://www.contributor-covenant.org/) - Used
-    for the Code of Conduct
-  - [Creative Commons](https://creativecommons.org/) - Used to choose
-    the license
 
 ## Contributing
 
@@ -81,9 +73,6 @@ Add additional notes to deploy this on a live system
 
 ## Versioning
 
-We use [Semantic Versioning](http://semver.org/) for versioning. For the versions
-available, see the [tags on this
-repository](https://github.com/PurpleBooth/a-good-readme-template/tags).
 
 ## Authors
 
@@ -91,7 +80,6 @@ repository](https://github.com/PurpleBooth/a-good-readme-template/tags).
   - Ajani Ayiera
 
 ## License
-
 
 Feel free to customize this template according to your project's specific needs.
 
