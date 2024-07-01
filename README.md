@@ -35,6 +35,10 @@ run the migrations
 
 Edit .env with your configurations
      cp .env.example .env
+     
+Add additional php packages
+    composer require kornrunner/keccak --ignore-platform-reqs 
+    composer require simplito/elliptic-php --ignore-platform-reqs
 
 
 compile the js
@@ -51,11 +55,11 @@ To run the tests on the system it is done as follows
 
 ### 
 
-npm test
-# or
-pytest
-# or
-rails test
+         npm test
+
+or with phpunit
+
+          vendor/bin/phpunit
 
 
 ### Style test
@@ -65,13 +69,6 @@ Checks if the best practices and the right coding style has been used.
     Give an example
 
 ## Deployment
-
-
-## Contributing
-
-
-
-## Versioning
 
 
 ## Authors
