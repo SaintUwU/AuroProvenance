@@ -16,7 +16,7 @@ project on your local machine for development and testing purposes.
 
 Requirements for the software and other tools to build, test and push
 
--[Composer](https://getcomposer.org/)
+- [Composer](https://getcomposer.org/)
 - [Laravel](https://laravel.com/docs/11.x))
 - [PhP v8](https://www.php.net/downloads.php)
 - [Xampp V8](https://www.apachefriends.org/download.html)
