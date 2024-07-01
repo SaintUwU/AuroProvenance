@@ -34,9 +34,11 @@ run the migrations
     
 
 Edit .env with your configurations
+
      cp .env.example .env
      
 Add additional php packages
+
     composer require kornrunner/keccak --ignore-platform-reqs 
     composer require simplito/elliptic-php --ignore-platform-reqs
 
