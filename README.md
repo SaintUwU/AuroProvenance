@@ -36,7 +36,7 @@ run the migrations
 
 Edit .env with your configurations
 
-     cp .env.example .env
+    $ php -r "copy('.env.example', '.env');"
      
 Add additional php packages
 
