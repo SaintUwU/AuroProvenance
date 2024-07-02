@@ -65,11 +65,11 @@ or with phpunit
           vendor/bin/phpunit
 
 
-### Style test
+### Disclaimer
+To integrate with block chain it requires a certain php file that is available for a certain version hence you may need to
+update your php version if you are using a lower version or runcomposer update like so.
 
-Checks if the best practices and the right coding style has been used.
-
-    Give an example
+        composer update
 
 ## Deployment
 
