@@ -3,27 +3,23 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Inertia\Inertia;
-use Inertia\Response;
-use App\Models\User;
-use App\Http\Resources\UserResource;
-use Illuminate\Support\Facades\Auth;
 
-class UserController extends Controller
+class PermissionController extends Controller
 {
-    public function index(): Response
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
     {
-        return Inertia::render('Admin/Users/UsersIndex',
-        ['users'=> UserResource::collection(User::all())]);
+        //
     }
-    
-     /**
+
+    /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        return Inertia::render(component:'Admin/Users/Create'); 
-
+        //
     }
 
     /**
@@ -31,8 +27,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        User::create(['name'=>$request->name()]);
-        return to_route('users.index');
+        //
     }
 
     /**
@@ -56,12 +51,7 @@ class UserController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $user = User::find($id);
-
-        return Inertia::render('Admin/Users/Edit', [
-            'user' => new UserResource($user)  
-
-        ]);
+        //
     }
 
     /**
@@ -69,8 +59,6 @@ class UserController extends Controller
      */
     public function destroy(string $id)
     {
-        $user = User::findById($id);
-        $user->delete();
-        return back();
+        //
     }
 }

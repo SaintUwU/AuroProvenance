@@ -3,6 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Traits\HasRoles;
 
 class StoreCarRequest extends FormRequest
 {
@@ -11,7 +13,7 @@ class StoreCarRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -19,10 +21,15 @@ class StoreCarRequest extends FormRequest
      *
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
      */
+
+    
     public function rules(): array
     {
         return [
-            //
+            'ownerId'=>['default'=> auth()->id()],
+            'name'=> ['required', 'string'],
+            'CarId' => ['required', 'string'],
+            
         ];
     }
 }

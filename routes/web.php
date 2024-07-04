@@ -5,7 +5,9 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CarController;
+use App\Http\Controllers\MechanicCarController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\UserCarController;
 use App\Http\Controllers\UserController;
 
 /*
@@ -29,9 +31,26 @@ Route::get('/', function () {
 });
 
 
-Route::resource('/CarsIndex', [CarController::class, 'Cars'])->name('Cars.index');
-Route::resource('/RolesIndex', [RoleController::class, 'Role'])->name('Role.index');
-Route::resource('/UsersIndex', [UserController::class, 'index'])->name('User.index');
+/*Route::resource('/CarsIndex', [CarController::class, 'index'])->name('Cars.index');
+Route::resource('/RolesIndex', [RoleController::class, 'index'])->name('Role.index');
+Route::resource('/UsersIndex', [UserController::class, 'index'])->name('User.index'); */
+
+Route::resource('/cars', CarController::class);
+Route::resource('/roles', RoleController::class);
+Route::resource('/users', UserController::class);
+Route::resource('/mech', MechanicCarController::class);
+Route::resource('/user', UserCarController::class);
+
+/*Route::resource('/Cars', CarController::class)->names([
+    'index' => 'Cars.index',
+]);
+Route::resource('/Roles', RoleController::class)->names([
+    'index' => 'Roles.index',
+]);
+Route::resource('/Users', UserController::class)->names([
+    'index' => 'Users.index',
+]); */
+
 
 Route::middleware([
     'auth:sanctum',
@@ -41,6 +60,10 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return Inertia::render('Dashboard');
     })->name('dashboard');
+    Route::get('/home', function(){
+        return Inertia::render('SharedPage');
+    })->name('shareddash');
+    Route::get('/cars/{car}/edit', 'App\Http\Controllers\CarController@edit')->name('cars.edit');
 });
 
 Route::middleware(['auth','role:admin'])->group(function(){

@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Models\Car;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -12,14 +13,15 @@ class CarResource extends JsonResource
      *
      * @return array<string, mixed>
      */
+   
     public function toArray(Request $request): array
     {
         return [
-            'id'=>$this->id,
-            'name'=>$this->name,
-            'repairs' => $this->repairs,
-            'ReplacedParts'=>$this->ReplacedParts,
-            'PendingRepairs' => $this->PendingRepairs,
+            'CarId' => $this->resource->CarId,
+            'name' => $this->resource->name,
+            'repairs' => $this->resource->repairs,
+            'ReplacedParts' => $this->resource->ReplacedParts,
+            'PendingRepairs' => $this->resource->PendingRepairs,
         ];
     }
 }

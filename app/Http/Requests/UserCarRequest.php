@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateCarRequest extends FormRequest
+class UserCarRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,9 +23,6 @@ class UpdateCarRequest extends FormRequest
     {
         return [
             
-            'repairs' => ['required', 'string'],
-            'ReplacedParts'=>['required', 'string'],
-            'PendingRepairs' => ['required', 'string'],
         ];
     }
 }

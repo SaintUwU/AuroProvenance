@@ -2,8 +2,11 @@
 
 namespace App\Http\Requests;
 
+//use Illuminate\Contracts\Validation\Rule;
+use Illuminate\Validation\Rules\Unique;
 use Illuminate\Foundation\Http\FormRequest;
 use Spatie\Permission\Models\Role;
+
 
 class CreateRoleRequest extends FormRequest
 {
@@ -12,7 +15,7 @@ class CreateRoleRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -21,10 +24,11 @@ class CreateRoleRequest extends FormRequest
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
      */
     public function rules(): array
-    {
+    { 
+        $uniqueRule = new Unique('roles', 'name');
         return [
-            //
-            'name'=>['required']
+            
+            'name'=>['required', 'string', 'max:30', $uniqueRule->ignore($this->role)],
         ];
     }
 }

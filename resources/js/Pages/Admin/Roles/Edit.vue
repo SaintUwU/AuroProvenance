@@ -7,15 +7,20 @@ import PrimaryButton from "@/Components/PrimaryButton.vue";
 import InputLabel from "@/Components/InputLabel.vue";
 import TextInput from "@/Components/TextInput.vue";
 
-
+const props = defineProps({
+    role: {
+        type: Object,
+        required: true
+    }
+})
 const form=useForm({
-    name: ""
+    name: props.role.name
 })
 </script>
 
 <template>
             <h1 class="font-semibold text-xl text-gray-800 leading-tight">
-                Create New Role
+                 Update Role
             </h1>
        
             <AdminLayout title="Admin Dashboard">
@@ -27,7 +32,7 @@ const form=useForm({
         </div>
         <div class="mt-6 max-w-md max-auto">
 
-        <form @submit.prevent="form.post(route('roles.store'))">
+        <form @submit.prevent="form.put(route('roles.update', role.id))">
             <div>
             <InputLabel for="name" value="Name"/>
             <TextInput
@@ -42,7 +47,7 @@ const form=useForm({
             </div>
             <div class="flex items-center mt-4">
                 <PrimaryButton class="ml-4" :class="{'opacity-25':form.processing}" :disabled="form.processing">
-                    Create
+                    Update
                 </PrimaryButton>
             </div>
         </form>

@@ -18,18 +18,42 @@ class RoleController extends Controller
         return Inertia::render('Admin/Roles/RolesIndex',[
     'roles'=>RoleResource::collection(Role::all())]);
     }
-    public function toArray(Request $request):array{
+    /*public function toArray(Request $request):array{
         return [
             'id'=>$this->id,
             'name'=>$this->name,
 
         ];
-    }
+    }*/
     public function create():Response{
         return Inertia::render(component:'Admin/Roles/Create'); 
     }
     public function store(CreateRoleRequest $request){
-        Role::create(['name'=>$request->name()]);
+
+        
+
+        Role::create($request->validated());
         return to_route('roles.index');
+    }
+
+    public function edit(string $id){
+        $role = Role::find($id);
+
+        return Inertia::render('Admin/Roles/Edit', [
+            'role' => new RoleResource($role)
+        ]);
+
+    }
+
+    public function update(CreateRoleRequest $request, string $id){
+        $role = Role::find($id);
+        $role->update($request->validated());
+        return to_route('roles.index');
+    }
+
+    public function destroy(string $id){
+        $role = Role::find($id);
+        $role->delete();
+        return back();
     }
 }

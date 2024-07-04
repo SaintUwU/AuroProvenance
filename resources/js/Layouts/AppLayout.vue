@@ -52,13 +52,19 @@ const logout = () => {
                             <!-- Navigation Links -->
                             <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                                 <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
-                                    Dashboard
+                                    Home
                                 </NavLink>
                                 <NavLink 
                                 v-if="hasRole('admin')"
                                 :href="route('admin.index')" :active="route().current('admin.index')">
-                                    Admin
+                                    Admin Dashboard
                                 </NavLink>
+                                <NavLink 
+                                v-if="hasRole('mechanic') || hasRole('user')"
+                                :href="route('shareddash')" :active="route().current('shareddash')">
+                                    User Dashboard
+                                </NavLink>
+                                
                             </div>
                         </div>
 

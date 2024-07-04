@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 
 class RoleSeeder extends Seeder
 {
@@ -14,7 +15,7 @@ class RoleSeeder extends Seeder
     public function run(): void
     {
         //
-        Role::create(['name' => 'mechanic']);
+        $mechanic = Role::create(['name' => 'mechanic']);
         $admin = Role::create(['name' => 'admin']);
         $productManager = Role::create(['name' => 'user']);
 
@@ -32,8 +33,8 @@ class RoleSeeder extends Seeder
             'edit-car',
             'delete-car'
         ]);
-        foreach ($roles as $role) {
+       /* foreach ($roles as $role) {
             Role::create(['name' => $role['name']]);
-        }
+        } */
     }
 }

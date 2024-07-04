@@ -11,17 +11,14 @@ defineProps(['cars'])
 
 <template>
             <h1 class="font-semibold text-xl text-gray-800 leading-tight">
-                Dashboard
+                User Dashboard
             </h1>
         
             <AdminLayout title="Admin Dashboard">
                 <div class="max-w-7xl py-4">
             <h2>Cars Index Page </h2>
-            <div>
-                <br>
-                
-            </div>
-            <Link :href="route('cars.create')" class="px-3 py-2 text-white font-semibold bg-indigo-500 hover:bg-indigo-700 rounded">
+            <br>
+            <Link :href="route('user.create')" class="px-3 py-2 text-white font-semibold bg-indigo-500 hover:bg-indigo-700 rounded">
                 Add a Vehicle</Link>
         
         <div class="mt-6">
@@ -59,12 +56,9 @@ defineProps(['cars'])
                 <td class="px-6 py-4">
                     {{   car.ReplacedParts   }}
                 </td>
-                <td class = "px-6 py-4">
-                    <Link :href="route('cars.edit', car.CarId)" class="text-blue-600 hover:text-blue-900"> [ Edit ]</Link>
-                    <Link :href="route('cars.destroy', car.CarId)" method="DELETE" as="button" class="text-red-600 hover:text-red-900"> [ Delete ] </Link>
-
+                <td class="px-6 py-4">
+                    <Link :href="route('user.destroy', car.CarId)" method="DELETE" as="button" class="text-red-600 hover:text-red-900"> Remove Vehicle </Link>
                 </td>
-               
             </tr>
            
         
