@@ -11,8 +11,15 @@ class UpdateYourTableAddForeignKey extends Migration
      */
     public function up(): void
     {
-        Schema::table('cars', function (Blueprint $table) {
-            $table->foreign('ownerId')->references('id')->on('users');
+        Schema::table('cars', function (Blueprint $table)
+         {
+            if (!Schema::hasColumn('cars', 'ownerId')) {
+                $table->unsignedBigInteger('ownerId'); // Define the column if it doesn't exist
+            }
+            
+            $table->foreign('ownerId')->references('id')->on('users')-> onDelete('cascade')
+            -> onUpdate('cascade');
+
         });
     }
 

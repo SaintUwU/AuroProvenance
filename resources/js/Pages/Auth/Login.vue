@@ -7,6 +7,9 @@ import InputError from '@/Components/InputError.vue';
 import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
+import Web3 from 'web3';
+
+
 
 defineProps({
     canResetPassword: Boolean,
@@ -27,6 +30,26 @@ const submit = () => {
         onFinish: () => form.reset('password'),
     });
 };
+
+async function loginWeb3() {
+    if (!window.ethereum) {
+        alert('MetaMask not detected. Please try again from a MetaMask enabled browser.');
+        return;
+    }
+
+    const web3 = new Web3(window.ethereum);
+
+    const message = [
+        "I have read and accepted the terms and conditions (https://AutoProvenance.com/) of this app.",
+        "Please sign me in!"
+    ].join("\n");
+
+    const address = (await web3.eth.requestAccounts())[0];
+    const signature = (await web3.eth.personal.sign(message, address));
+    return useForm({ message, address, signature }).post('/login-web3');
+    
+};
+
 </script>
 
 <template>
@@ -35,7 +58,17 @@ const submit = () => {
     <AuthenticationCard>
         <template #logo>
             <AuthenticationCardLogo />
+
         </template>
+
+        <div class="text-center pt-4 pb-8 border-b border-gray-200">
+    <PrimaryButton @click="loginWeb3">
+        Login with MetaMask
+    </PrimaryButton>
+</div>
+<div class="py-6 text-sm text-gray-500 text-center">
+    or login with your credentials…
+</div>
 
         <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
             {{ status }}

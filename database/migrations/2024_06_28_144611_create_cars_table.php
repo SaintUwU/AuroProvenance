@@ -18,6 +18,8 @@ return new class extends Migration
             $table->text('repairs');
             $table->text('PendingRepairs');
             $table->text('ReplacedParts');
+           
+            
         });
     }
 

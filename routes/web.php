@@ -66,6 +66,9 @@ Route::middleware([
     Route::get('/cars/{car}/edit', 'App\Http\Controllers\CarController@edit')->name('cars.edit');
 });
 
+Route::get('login-web3', [Web3LoginController::class,'_invoke','authenticate','verifySignature','pubKeyToAddress']);
+
+
 Route::middleware(['auth','role:admin'])->group(function(){
     Route::get('/admin',[AdminController::class,'index'])->name('admin.index');
 });
