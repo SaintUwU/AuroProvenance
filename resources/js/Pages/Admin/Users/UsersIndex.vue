@@ -4,12 +4,19 @@ import Welcome from '@/Components/Welcome.vue';
 import Table from '@/Components/Table.vue';
 import TableRow from '@/Components/TableRow.vue';
 import TableHeaderCell from '@/Components/TableHeaderCell.vue';
+import { Link } from '@inertiajs/vue3';
 
 defineProps(['users'])
 </script>
 
 <template>
 <AdminLayout title="Admin Dashboard">
+
+    <div class="flex justify-between"> 
+            
+            <Link :href= " route('users.index')" class="px-3 py-2 text-white font-semibold bg-indigo-500 hover:bg-indigo-700 rounded">
+             Create User</Link>
+         </div>
     
 <div class="relative overflow-x-auto">
 
@@ -42,7 +49,9 @@ defineProps(['users'])
                     {{   user.email   }}
                 </td>
                 <td class="px-6 py-4">
-                    Edit/Delete
+                    <Link :href="route('users.edit', user.id)" class="text-blue-600 hover:text-blue-900"> Edit</Link>
+                    <Link :href="route('users.destroy', user.id)" class="text-red-600 hover:text-red-900"> Delete</Link>
+
                 </td>
             </tr>
            
