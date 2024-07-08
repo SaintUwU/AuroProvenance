@@ -71,32 +71,33 @@ update your php version if you are using a lower version or runcomposer update l
 
         composer update
 
-### Features
+## Features
 **History of cars including repairs and accidents**
 **Secure and private through blockchain encryption techniques**
 
-### Running the server
+## Acknowledgments
+
+  - Tony Xhepa
+    
+
+## Running the server
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/AutoProvenance.git
+     git clone https://github.com/yourusername/AutoProvenance.git
 
 # Navigate to the project directory
-cd AutoProvenance
+     cd AutoProvenance
 
 # Install dependencies
-npm install
+    npm install
 
 # Start the development server
-npm start
-
-
-
+    npm start
+```
 
 ## Authors
-
   - Erick Kamau
   - Ajani Ayiera
-
 
 
 
