@@ -21,7 +21,7 @@ Requirements for the software and other tools to build, test and push
 - [PhP v8](https://www.php.net/downloads.php)
 - [Xampp V8](https://www.apachefriends.org/download.html)
 
-### Installing
+### Testing
 
 Here is how you can get the environment up and running in your local computer
 
@@ -71,7 +71,25 @@ update your php version if you are using a lower version or runcomposer update l
 
         composer update
 
-## Deployment
+### Features
+**History of cars including repairs and accidents**
+**Secure and private through blockchain encryption techniques**
+
+### Running the server
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/AutoProvenance.git
+
+# Navigate to the project directory
+cd AutoProvenance
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm start
+
+
 
 
 ## Authors
@@ -79,9 +97,7 @@ update your php version if you are using a lower version or runcomposer update l
   - Erick Kamau
   - Ajani Ayiera
 
-## License
 
-Feel free to customize this template according to your project's specific needs.
 
 
 ## Acknowledgments
