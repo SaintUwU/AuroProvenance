@@ -1,6 +1,7 @@
 <script setup>
 import AdminLayout from '@/Layouts/AdminLayout.vue';
 import Welcome from '@/Components/Welcome.vue';
+import theChart from '@/Components/BarChart.vue';
 </script>
 
 <template>
@@ -12,7 +13,7 @@ import Welcome from '@/Components/Welcome.vue';
         
             <AdminLayout title="Admin Dashboard">
         <div class="py-4">
-            <h2>Welcome Admin</h2>
+            <theChart aria-label="Users of each type in the system"/>
         </div>
     </AdminLayout>
 </template>

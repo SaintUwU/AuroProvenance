@@ -11,12 +11,12 @@ defineProps(['cars'])
 
 <template>
             <h1 class="font-semibold text-xl text-gray-800 leading-tight">
-                Dashboard
+               
             </h1>
         
             <AdminLayout title="Admin Dashboard">
                 <div class="max-w-7xl py-4">
-            <h2>Cars Index Page </h2>
+            
             <div>
                 <br>
                 

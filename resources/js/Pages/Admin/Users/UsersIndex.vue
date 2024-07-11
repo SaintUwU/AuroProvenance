@@ -17,7 +17,7 @@ defineProps(['users'])
             <Link :href= " route('users.index')" class="px-3 py-2 text-white font-semibold bg-indigo-500 hover:bg-indigo-700 rounded">
              Create User</Link>
          </div>
-    
+    <br>
 <div class="relative overflow-x-auto">
 
     <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">

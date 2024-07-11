@@ -23,7 +23,6 @@ defineProps({
             <AdminLayout title="Admin Dashboard">
                 <div class="max-w-7xl py-4">
            <div class="flex justify-between"> 
-            <h2>Role Index Page</h2>
            <Link :href="route('roles.create')" class="px-3 py-2 text-white font-semibold bg-indigo-500 hover:bg-indigo-700 rounded">
             New Role</Link>
         </div>

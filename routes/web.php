@@ -10,6 +10,7 @@ use App\Http\Controllers\MechanicCarController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserCarController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\LockScreenController;
 
 /*
 |--------------------------------------------------------------------------
@@ -65,6 +66,8 @@ Route::middleware([
         return Inertia::render('SharedPage');
     })->name('shareddash');
     Route::get('/cars/{car}/edit', 'App\Http\Controllers\CarController@edit')->name('cars.edit');
+
+    Route::get('/lock_screen','App\Http\Controllers\LockScreenController@lockScreen')->name('lockscreen');
 });
 
 Route::get('login-web3', [Web3LoginController::class,'_invoke','authenticate','verifySignature','pubKeyToAddress']);
