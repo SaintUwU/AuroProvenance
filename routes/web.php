@@ -12,6 +12,8 @@ use App\Http\Controllers\UserCarController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LockScreenController;
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -70,8 +72,16 @@ Route::middleware([
     Route::get('/lock_screen','App\Http\Controllers\LockScreenController@lockScreen')->name('lockscreen');
 });
 
-Route::get('login-web3', [Web3LoginController::class,'_invoke','authenticate','verifySignature','pubKeyToAddress']);
+Route::get('/metamask-login',function(){
+    if(Auth::check()){
+        return redirect()->route("dashboard");
+    }
 
+});
+
+Route::get('/loginWeb3',[Web3LoginController::class, 'verifySignature']);
+Route::post('/loginWeb3',[Web3LoginController::class,'nonce']);
+Route::post('/loginWeb3',[Web3LoginController::class,'login']);
 
 Route::middleware(['auth','role:admin'])->group(function(){
     Route::get('/admin',[AdminController::class,'index'])->name('admin.index');

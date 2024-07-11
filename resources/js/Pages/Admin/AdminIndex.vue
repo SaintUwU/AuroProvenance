@@ -1,7 +1,17 @@
-<script setup>
+<script setup >
 import AdminLayout from '@/Layouts/AdminLayout.vue';
 import Welcome from '@/Components/Welcome.vue';
+<<<<<<< HEAD
 import theChart from '@/Components/BarChart.vue';
+=======
+import 'flowbite';
+
+
+
+
+
+
+>>>>>>> d8365c1b9fb4129b0d569df401e57a6aa8207395
 </script>
 
 <template>
@@ -13,7 +23,15 @@ import theChart from '@/Components/BarChart.vue';
         
             <AdminLayout title="Admin Dashboard">
         <div class="py-4">
+<<<<<<< HEAD
             <theChart aria-label="Users of each type in the system"/>
+=======
+            <h2>Welcome Admin</h2>
+
+            
+
+
+>>>>>>> d8365c1b9fb4129b0d569df401e57a6aa8207395
         </div>
     </AdminLayout>
 </template>
