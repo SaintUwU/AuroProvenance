@@ -23,6 +23,7 @@ defineProps({
             <AdminLayout title="Admin Dashboard">
                 <div class="max-w-7xl py-4">
             <h2>Mechanic's Car Index </h2>
+       
         
         <div class="mt-6">
             <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">

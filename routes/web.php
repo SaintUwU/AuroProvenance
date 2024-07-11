@@ -11,6 +11,8 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserCarController;
 use App\Http\Controllers\UserController;
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -67,8 +69,16 @@ Route::middleware([
     Route::get('/cars/{car}/edit', 'App\Http\Controllers\CarController@edit')->name('cars.edit');
 });
 
-Route::get('login-web3', [Web3LoginController::class,'_invoke','authenticate','verifySignature','pubKeyToAddress']);
+Route::get('/metamask-login',function(){
+    if(Auth::check()){
+        return redirect()->route("dashboard");
+    }
 
+});
+
+Route::get('/loginWeb3',[Web3LoginController::class, 'verifySignature']);
+Route::post('/loginWeb3',[Web3LoginController::class,'nonce']);
+Route::post('/loginWeb3',[Web3LoginController::class,'login']);
 
 Route::middleware(['auth','role:admin'])->group(function(){
     Route::get('/admin',[AdminController::class,'index'])->name('admin.index');

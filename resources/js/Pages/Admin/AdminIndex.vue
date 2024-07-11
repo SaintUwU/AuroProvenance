@@ -1,6 +1,13 @@
-<script setup>
+<script setup >
 import AdminLayout from '@/Layouts/AdminLayout.vue';
 import Welcome from '@/Components/Welcome.vue';
+import 'flowbite';
+
+
+
+
+
+
 </script>
 
 <template>
@@ -13,6 +20,10 @@ import Welcome from '@/Components/Welcome.vue';
             <AdminLayout title="Admin Dashboard">
         <div class="py-4">
             <h2>Welcome Admin</h2>
+
+            
+
+
         </div>
     </AdminLayout>
 </template>
