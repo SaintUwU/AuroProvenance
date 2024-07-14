@@ -22,6 +22,7 @@ class CarResource extends JsonResource
             'repairs' => $this->resource->repairs,
             'ReplacedParts' => $this->resource->ReplacedParts,
             'PendingRepairs' => $this->resource->PendingRepairs,
+            'mechanic_update' => $this->resource->mechanic_update,
         ];
     }
 }

@@ -18,6 +18,7 @@ const form=useForm({
     repairs:"",
     PendingRepairs:"",
     ReplacedParts:"",
+    mechanic_update:"",
 
 
     
@@ -70,6 +71,19 @@ const form=useForm({
             type="text"
             class="mt-1 block w-full"
             v-model="form.ReplacedParts"
+            
+            autofocus
+            />
+            <InputError class="mt-2" :message="form.errors.name"/>
+            </div>
+
+            <div>
+            <InputLabel for="mechanic_update" value="Mechanic Updating"/>
+            <TextInput
+            id="mechanic_update"
+            type="text"
+            class="mt-1 block w-full"
+            v-model="form.mechanic_update"
             
             autofocus
             />

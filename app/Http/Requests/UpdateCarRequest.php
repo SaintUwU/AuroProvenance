@@ -26,6 +26,7 @@ class UpdateCarRequest extends FormRequest
             'repairs' => ['required', 'string'],
             'ReplacedParts'=>['required', 'string'],
             'PendingRepairs' => ['required', 'string'],
+            'mechanic_update' => ['required', 'string'],
         ];
     }
 }

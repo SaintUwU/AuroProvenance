@@ -19,6 +19,7 @@ class Car extends Model
         'repairs',
         'Pending Repairs',
         'Replaced Parts',
+        'Mechanic'
         
 
     ];

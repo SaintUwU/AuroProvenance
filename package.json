@@ -20,15 +20,11 @@
         "vue": "^3.4.31"
     },
     "dependencies": {
-<<<<<<< HEAD
-        "chart.js": "^4.4.3",
-=======
         "@web3modal/ethers": "^5.0.6",
         "apexcharts": "^3.50.0",
         "chart.js": "^4.4.3",
         "ethers": "^6.13.1",
         "flowbite": "^2.4.1",
->>>>>>> d8365c1b9fb4129b0d569df401e57a6aa8207395
         "vue-chartjs": "^5.3.1",
         "vue-multiselect": "^3.0.0",
         "vue-router": "^4.4.0",

@@ -40,6 +40,9 @@ defineProps(['cars'])
                 <th scope="col" class="px-6 py-3">
                     Replaced Parts               
                  </th>
+                 <th scope="col" class="px-6 py-3">
+                    Mechanic
+                 </th>
                 <th scope="col" class="px-6 py-3">
                     Action               
                  </th>
@@ -58,6 +61,9 @@ defineProps(['cars'])
                 </td>
                 <td class="px-6 py-4">
                     {{   car.ReplacedParts   }}
+                </td>
+                <td class="px-6 py-4">
+                    {{ car.mechanic_update }}
                 </td>
                 <td class = "px-6 py-4">
                     <Link :href="route('cars.edit', car.CarId)" class="text-blue-600 hover:text-blue-900"> [ Edit ]</Link>

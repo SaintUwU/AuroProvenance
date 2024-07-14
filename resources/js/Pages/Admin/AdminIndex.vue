@@ -1,37 +1,46 @@
 <script setup >
 import AdminLayout from '@/Layouts/AdminLayout.vue';
 import Welcome from '@/Components/Welcome.vue';
-<<<<<<< HEAD
-import theChart from '@/Components/BarChart.vue';
-=======
 import 'flowbite';
+import BarChart from '@/Components/BarChart.vue';
+import Pie from '@/Components/Pie.vue';
 
 
 
-
-
-
->>>>>>> d8365c1b9fb4129b0d569df401e57a6aa8207395
+defineProps({
+    userCount: Number,
+    carCount: Number,
+})
 </script>
 
 <template>
   
         
             <h1 class="font-semibold text-xl text-gray-800 leading-tight">
-                Dashboard
+               Administrator Dashboard
             </h1>
         
             <AdminLayout title="Admin Dashboard">
         <div class="py-4">
-<<<<<<< HEAD
-            <theChart aria-label="Users of each type in the system"/>
-=======
-            <h2>Welcome Admin</h2>
+            <h1><u>Application Analytics</u></h1>
+        </div>
+        <div class="py-4 border-x-2 border-y-4 fill-zinc-700">
+            <h5><i>Number of Users: {{ userCount }}</i></h5>
+            
+        </div>
+        <div class="py-4 border-x-2 border-y-4">
+            <h5><i>Total number of Vehicles: {{ carCount }}</i></h5>
+            
+        </div>
+        <div class="py-4">
+            <BarChart />
 
             
-
-
->>>>>>> d8365c1b9fb4129b0d569df401e57a6aa8207395
         </div>
+        <div class="py-4">
+            <Pie/>
+            
+        </div>
+        
     </AdminLayout>
 </template>
